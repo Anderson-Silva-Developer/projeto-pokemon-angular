@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Pokemon} from "../../_model/Pokemon";
+import {getPokemonImage, getPokemonNumber, Pokemon} from "../../_model/Pokemon";
 import {Type} from "../../_model/Type";
 
 @Component({
@@ -11,14 +11,12 @@ export class PokemonCardComponent{
   @Input()
   public pokemon: Pokemon | undefined;
 
+  public getPokemonNumber=getPokemonNumber;
+  public getPokemonImage=getPokemonImage;
 
-  public leadingZero(str: string | number | undefined,size=3):string{
-    let s=String(str);
-    while (s.length < (size || 2)){
-      s = '0'+s;
-    }
-    return s;
-  }
+
+
+
 
 }
 
